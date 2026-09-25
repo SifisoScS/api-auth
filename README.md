@@ -30,3 +30,7 @@ Part of: backend-apis
 - scheduling-interval
 - scheduling-deadline
 - scheduling-recurring
+
+## Configuration
+
+`JWT_SECRET` must be set in the environment. There is no default: `generateToken` and `verifyToken` throw if it is missing.
