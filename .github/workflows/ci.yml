@@ -24,6 +24,9 @@ jobs:
         run: npm run build
 
       - name: Smoke — token round-trip
+        env:
+          # Throwaway value: the module requires JWT_SECRET and has no default (by design).
+          JWT_SECRET: ci-smoke-only-not-a-real-secret
         run: |
           node -e "
             const m = require('./dist/index.js');
